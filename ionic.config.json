@@ -1,0 +1,8 @@
+{
+  "name": "turkic-languages",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "d9e3e4af"
+}

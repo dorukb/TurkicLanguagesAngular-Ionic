@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Personal Information
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="8" offset-md="2">
+        <ion-card>
+
+          <ion-item>
+            <ion-label position="floating">Age</ion-label>
+            <ion-input type="number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Gender</ion-label>
+            <ion-select placeholder="Select One">
+              <ion-select-option value="f">Female</ion-select-option>
+              <ion-select-option value="m">Male</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item (click)="OpenSelect(0)">
+            <ion-label position="stacked"
+              >Native Language<ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text">{{nativeLanguage}}</ion-input>
+          </ion-item>
+    
+          <ion-item (click)="OpenSelect(1)">
+            <ion-label position="stacked"
+              >Language of contribution <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text">{{contributionLanguage}}</ion-input>
+          </ion-item>
+    
+          <ion-item *ngIf="showProfScale">
+            <ion-label position="stacked">Proficiency Level </ion-label>
+            <ion-select interface="popover">
+              <ion-select-option value="advanced" checked="true"
+                >Advanced</ion-select-option
+              >
+              <ion-select-option value="intermediate"
+                >Intermediate</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+        
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    
+
+    <ion-row>
+      <ion-col size-md="8" offset-md="2">
+        <ion-button color="dark" (click)="onFormSubmit()">
+          Continue
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

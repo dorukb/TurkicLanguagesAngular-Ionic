@@ -1,0 +1,31 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      <ion-label class="ion-text-wrap">
+        {{titleText}}
+      </ion-label>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-row>
+      <ion-col col-12 no-padding>
+        <ion-searchbar
+          [(ngModel)]="searchText"
+          (ionChange)="filterList()"
+        ></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let item of filterItems;" (click)="select(item)">
+      <ion-col text-align="center">
+        <ion-item>
+          {{item}}
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
