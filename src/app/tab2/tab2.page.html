@@ -15,17 +15,39 @@
 
   <ion-grid>
     <ion-row class="ion-align-items-center">
-      <ion-col size-sm="8" offset-sm="2" size-lg="6" offset-lg="3">
+      <ion-col size-sm="8" offset-sm="2" size-lg="6" offset-lg="3" >
         <ion-img
           src="https://i.insider.com/5b22bda45e48ec22008b46b5?width=1080&format=jpeg"
         ></ion-img>
         
         <div class="ion-text-center">
-          <ion-button>
+
+          <ion-button (click)="recordAudio()">
             <ion-label>Record</ion-label>
             <ion-icon name="mic-outline"></ion-icon>
           </ion-button>
+          <ion-button (click)="stopRecording()">
+            <ion-label>stop</ion-label>
+            <ion-icon name="mic-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="playTest()">
+            <ion-label>test random</ion-label>
+            <ion-icon name="mic-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="clearStorage()">
+            <ion-label>Clear Stored files</ion-label>
+          </ion-button>
+          <h1>{{status}}</h1>
+          <h3>{{duration}}</h3>
         </div>
+
+        <ion-item *ngFor="let audioFile of audioFiles">
+          {{audioFile.fileName}}
+          <ion-text>   ,{{audioFile.duration.toString()}} secs.</ion-text>
+          <ion-button (click)="playRecording(audioFile.fileName)">
+            <ion-icon name="play"></ion-icon>
+          </ion-button>
+        </ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>

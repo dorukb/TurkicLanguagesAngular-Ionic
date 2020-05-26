@@ -1,8 +1,8 @@
 {
-  "name": "turkic-languages",
+  "name": "voice-test",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
-  "type": "angular",
-  "id": "d9e3e4af"
+  "type": "angular"
 }
